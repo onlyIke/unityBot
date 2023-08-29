@@ -1,0 +1,23 @@
+{
+  "name": "unitybot",
+  "version": "1.0.0",
+  "description": "master bot of Unity",
+  "main": "unityBot/unityBotSC.js",
+  "scripts": {
+    "test": "hello bot?"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Ike",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.13.0",
+    "node-cron": "^3.0.2",
+    "node-schedule": "^2.1.1"
+  }
+}
