@@ -1,14 +1,18 @@
-const { Client, IntentsBitField } = require('discord.js');
+const { Client, Intents } = require('discord.js');
 const cron = require('node-cron');
+const TOKEN = process.env.DISCORD_TOKEN;
 
 const client = new Client({
     intents: [
-        IntentsBitField.Flags.Guilds,
-        IntentsBitField.Flags.GuildMembers,
-        IntentsBitField.Flags.GuildMessages,
-        IntentsBitField.Flags.MessageContent,
+        Intents.FLAGS.Guilds,
+        Intents.FLAGS.GuildMembers,
+        Intents.FLAGS.GuildMessages,
+        Intents.FLAGS.MessageContent,
     ],
 });
+
+// Add this line to define the version variable
+const { version } = require('discord.js');
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -42,8 +46,5 @@ function scheduleMessages() {
     }
 }
 
-
-
-
-
-client.login('MTE0NDUwNTk2MDE0NTEwNDk5Nw.Gj0VOn.dufxsc4L4VSeRFCT4onP3vE5a8km25DS5UXvto');
+console.log(`discord.js version: ${version}`);
+client.login(TOKEN);
